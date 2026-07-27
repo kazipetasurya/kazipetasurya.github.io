@@ -712,3 +712,26 @@ main,
     transform: none;
   }
 }
+
+/* Botanical background accent — fern frond, bottom-right corner */
+.botanical {
+  position: fixed;
+  right: -60px;
+  bottom: -40px;
+  width: min(46vw, 520px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.16;
+}
+
+.botanical svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .botanical {
+    display: none;
+  }
+}
