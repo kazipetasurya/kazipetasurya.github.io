@@ -6,7 +6,7 @@
 3. If a design or structural choice was made, also add an entry to `docs/DECISIONS.md` (date, decision, why).
 
 ## What this is
-Personal portfolio for Surya Kazipeta (CEO & Co-Founder, FloSense). Single-page site in
+Personal portfolio for Surya Kazipeta (Senior Product Manager, AI agents). Content is sourced from his resume; do not add claims or metrics the resume does not support. Single-page site in
 plain HTML/CSS/vanilla JS. No build step, no package manager, no dependencies beyond
 Google Fonts. Deployed by GitHub Pages from `main` (user site: `kazipetasurya.github.io`).
 The Pages source setting is not visible from the repo; confirm in GitHub settings if it matters.
@@ -14,9 +14,9 @@ The Pages source setting is not visible from the repo; confirm in GitHub setting
 ## Files
 - `index.html` — the whole page, including the inline SVG fern background.
 - `styles.css` — all styling, theme tokens in `:root`.
-- `script.js` — sticky-nav shadow on scroll, scroll-reveal (IntersectionObserver), footer year.
+- `script.js` — sticky-nav shadow, mobile menu toggle, scroll-reveal (IntersectionObserver), footer year.
 - `_config.yml` — Jekyll config; excludes `CLAUDE.md` and `docs/` from the published site.
-- `.gitignore` — ignores `.DS_Store` and `assets/` (note: anything in `assets/` is NOT deployed).
+- `.gitignore` — ignores `.DS_Store`, `assets/` and `private/` (private/ holds resume source files; never commit or copy them into tracked files).
 - `CLAUDE.md` — this file.
 - `docs/DECISIONS.md` — log of design/structural choices and why.
 - `docs/CHANGELOG.md` — dated change log, newest first.
@@ -24,14 +24,13 @@ The Pages source setting is not visible from the repo; confirm in GitHub setting
 ## Section map (index.html)
 | ID | Purpose | Lines (approx.) |
 |---|---|---|
-| (nav) | Name mark + anchor links | 40-51 |
-| `#hero` | Headline, lede, CTA, 4 quick facts | 55-76 |
-| `#building` (01) | FloSense feature card | 79-105 |
-| `#momentum` (02) | Stashly and Litmetrics badges | 108-128 |
-| `#path` (03) | Experience timeline | 131-195 |
-| `#craft` (04) | Skill tags + education | 198-249 |
-| `#contact` (05) | LinkedIn and GitHub links | 252-265 |
-| (footer) | Name, year, location | 268-271 |
+| (nav) | Name mark, Menu button (<=460px), anchor links | 40-54 |
+| `#hero` | Headline, lede, CTAs, 4 quick facts | 56-79 |
+| `#impact` (01) | Selected impact: 4 metric cards | 81-118 |
+| `#path` (02) | Timeline: Elife, Al Jazeera, Blibli, early career | 120-185 |
+| `#craft` (03) | Skills (6 grouped tag lists) + education | 187-265 |
+| `#contact` (04) | Email, LinkedIn, GitHub | 267-282 |
+| (footer) | Name, year, location | 284-288 |
 
 Line numbers drift as the file changes; search for the section ID instead.
 
@@ -42,7 +41,7 @@ Tokens (`:root` in `styles.css`):
 - Layout: `--content-width` 1040px, `--gutter` clamp(1.25rem,4vw,3rem), `--radius` 14px, `--shadow`
 - Fonts: Fraunces (serif; headings, numbers) and Inter (body), loaded from Google Fonts
 - Breakpoints: `min-width: 700px` (4-col facts), `max-width: 699px` (stack layouts),
-  `max-width: 640px` (hide fern), `max-width: 460px` (hide nav links), `prefers-reduced-motion`
+  `max-width: 640px` (hide fern), `max-width: 460px` (nav links collapse into a Menu dropdown), `prefers-reduced-motion`
 - Look: warm paper, forest green + clay accents, grain overlay, fixed corner fern SVG
 - Naming: BEM-style (`.path__item`, `.feature__stats`, `.btn--solid`)
 
@@ -50,23 +49,22 @@ Tokens (`:root` in `styles.css`):
 - Use existing tokens; don't introduce new hardcoded colors when a token fits.
 - No frameworks, no build tooling, no new dependencies. Vanilla JS only.
 - Keep `prefers-reduced-motion` support (CSS block + JS check in `script.js`).
-- Keep the writing voice: calm, concrete, first person, outcome-focused with numbers.
+- Keep the writing voice: calm, concrete, first person, outcome-focused with numbers. No buzzwords, no em dashes.
 - New content blocks that should animate in get the `.reveal` class.
 - Keep the layout working at phone width.
 
 ## Known issues (checklist)
-- [ ] `.btn--ghost` in `styles.css` is unused (dead CSS)
-- [ ] Nav links are hidden below 460px with no mobile menu replacement
 - [ ] `.gitignore` excludes `assets/`, so images/PDFs placed there won't deploy
 - [ ] No favicon, `og:image`, `og:url`, or Twitter card meta tags
-- [ ] "Proof of momentum" (`#momentum`) is not linked in the nav
-- [ ] `#momentum` and `#path` are both `section--muted`, so they merge into one band
 - [ ] Small text sizes (nav 0.78rem, `.edu__meta` 0.73rem) and `.path__item--quiet` at 0.68 opacity may fail contrast
-- [ ] `!important` on `.edu__deg` / `.edu__meta`
+- [ ] `!important` on `.edu__deg` / `.edu__meta` / `.edu__note`
 - [ ] `.reveal` content stays invisible if JS fails (no `<noscript>` fallback)
 - [ ] Inline fern SVG is bulky in `index.html`
-- [ ] External links (flosense.dev, LinkedIn, GitHub) not verified
-- [ ] Content claims (partners, metrics) not verified as current
+- [ ] LinkedIn and GitHub links not verified
+- [ ] Mobile menu (<=460px) not tested on a real device
+- [ ] `private/Resume_-_Content.md` was not available when content was curated, so facts were checked against the PDF only
+
+Resolved 2026-10-01: "Daniels" confirmed correct (resume has a typo); FeedLens removed by choice; Tracxn IPO note verified by owner; unused `.btn--ghost` (now the hero "Email me" button), missing mobile nav, unlinked/adjacent muted `#momentum`, FloSense and unverified metrics.
 
 ## Local preview
 ```

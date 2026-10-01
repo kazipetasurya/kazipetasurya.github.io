@@ -14,6 +14,23 @@
     }
   };
 
+  const toggle = document.querySelector(".nav__toggle");
+  const setMenu = (open) => {
+    if (!nav || !toggle) return;
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  };
+
+  if (toggle) {
+    toggle.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
+    document.querySelectorAll(".nav__links a").forEach((link) =>
+      link.addEventListener("click", () => setMenu(false))
+    );
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setMenu(false);
+    });
+  }
+
   updateNav();
   window.addEventListener("scroll", updateNav, { passive: true });
 
