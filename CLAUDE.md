@@ -6,7 +6,7 @@
 3. If a design or structural choice was made, also add an entry to `docs/DECISIONS.md` (date, decision, why).
 
 ## What this is
-Personal portfolio for Surya Kazipeta (Senior Product Manager, AI agents). Content is sourced from his resume; do not add claims or metrics the resume does not support. Single-page site in
+Personal portfolio for Surya Kazipeta (Senior Product Manager: consumer apps, e-commerce, marketplaces and B2B platforms; AI is one strength among several). Content is sourced from his resume; do not add claims or metrics the resume does not support. Single-page site in
 plain HTML/CSS/vanilla JS. No build step, no package manager, no dependencies beyond
 Google Fonts. Deployed by GitHub Pages from `main` (user site: `kazipetasurya.github.io`).
 The Pages source setting is not visible from the repo; confirm in GitHub settings if it matters.
@@ -25,10 +25,10 @@ The Pages source setting is not visible from the repo; confirm in GitHub setting
 | ID | Purpose | Lines (approx.) |
 |---|---|---|
 | (nav) | Name mark, Menu button (<=460px), anchor links | 40-54 |
-| `#hero` | Headline, lede, CTAs, 4 quick facts | 56-79 |
-| `#impact` (01) | Selected impact: 4 metric cards | 81-118 |
+| `#hero` | Tagline, lede, CTAs, 4 quick facts | 56-79 |
+| `#impact` (01) | Selected impact: 4 cards, one per domain (consumer, media, B2B platform, AI) | 81-118 |
 | `#path` (02) | Timeline: Elife, Al Jazeera, Blibli, early career | 120-185 |
-| `#craft` (03) | Skills (6 grouped tag lists) + education | 187-265 |
+| `#craft` (03) | Skills (6 groups, AI group fifth) + education | 187-265 |
 | `#contact` (04) | Email, LinkedIn, GitHub | 267-282 |
 | (footer) | Name, year, location | 284-288 |
 
@@ -46,6 +46,7 @@ Tokens (`:root` in `styles.css`):
 - Naming: BEM-style (`.path__item`, `.feature__stats`, `.btn--solid`)
 
 ## Conventions
+- Keep the positioning balanced: AI is one strength, not the headline. Only use AI-heavy wording when a specific resume fact backs it.
 - Use existing tokens; don't introduce new hardcoded colors when a token fits.
 - No frameworks, no build tooling, no new dependencies. Vanilla JS only.
 - Keep `prefers-reduced-motion` support (CSS block + JS check in `script.js`).
@@ -65,6 +66,8 @@ Tokens (`:root` in `styles.css`):
 - [ ] `private/Resume_-_Content.md` was not available when content was curated, so facts were checked against the PDF only
 
 Resolved 2026-10-01: "Daniels" confirmed correct (resume has a typo); FeedLens removed by choice; Tracxn IPO note verified by owner; unused `.btn--ghost` (now the hero "Email me" button), missing mobile nav, unlinked/adjacent muted `#momentum`, FloSense and unverified metrics.
+
+- [ ] Tagline says "11 years" (owner wording) while the quick fact and resume say "11+"
 
 ## Local preview
 ```

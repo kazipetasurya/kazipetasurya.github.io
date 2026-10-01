@@ -2,6 +2,15 @@
 
 Dated entries, newest first.
 
+## 2026-10-01 (rebalance: consumer, marketplace, B2B)
+- Hero tagline now "11 years building products at scale, across consumer apps, marketplaces and B2B platforms." Eyebrow is "Senior Product Manager". Lede rewritten (Blibli, Al Jazeera, Elife; AI mentioned once).
+- Quick fact "Production AI" replaced with "Consumer to B2B".
+- Selected impact: one card per domain (Blibli Notice Board, Al Jazeera, Elife Rule Engine, Elife AI dispute resolution). The ~88% support agent moved into the Elife timeline entry.
+- Elife timeline entry now covers the back-office platform, IAM, incident reduction and the Rule Engine alongside the AI agents.
+- Skills reordered: strategy, technical PM, data, consumer and marketplace, AI, design and delivery. Nothing removed.
+- Toned down AI wording in the title, meta tags and contact line.
+- Updated CLAUDE.md and DECISIONS.md.
+
 ## 2026-10-01 (final content pass)
 - Removed FeedLens from the page (timeline entry; "founder" dropped from the path note).
 - Restored "since gone public" for Tracxn in the early-career entry.

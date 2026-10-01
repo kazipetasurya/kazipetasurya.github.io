@@ -2,6 +2,16 @@
 
 Log of design and structural choices. Newest first. Format: date, decision, why.
 
+## 2026-10-01 — Reposition from AI-first to a balanced profile
+**Decisions:**
+- The page now presents a well-rounded PM across consumer apps, e-commerce, marketplaces and B2B platforms. AI is one strength among several.
+- Impact cards are one per domain. The AI card is last; the ~88% support agent moved into the Elife timeline entry to avoid a second AI card.
+- Elife entry leads with platform work (IAM, incident reduction, Rule Engine) before the AI agents.
+- Skills reordered so product strategy, technical PM and data come first; the AI group sits fifth. No skills removed.
+- AI wording kept only where a resume fact backs it ("two AI agents", 88%, 70% of ~30K cases, golden dataset, drift). Dropped "AI agents" from the title, meta tags, eyebrow and contact line.
+- Tagline uses "11 years" as the owner wrote it; the quick fact keeps "11+ yrs".
+**Why:** The earlier version read as an AI specialist. The owner wants to be seen as a generalist product leader with proven results in several domains, and the resume supports that.
+
 ## 2026-10-01 — Remove FeedLens; restore Tracxn IPO note
 **Decisions:**
 - FeedLens removed from the page entirely, by the owner's choice (timeline entry and "founder" wording gone). It is still on the resume; this is a page-only curation call.
