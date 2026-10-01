@@ -1,0 +1,4 @@
+# Keep repo-only docs out of the published GitHub Pages site.
+exclude:
+  - CLAUDE.md
+  - docs/
